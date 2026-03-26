@@ -82,3 +82,4 @@ dist
 
 src/typegen.d.ts
 .eslint-config-inspector
+.pnpm-store
