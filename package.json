@@ -1,0 +1,60 @@
+{
+  "name": "@tanny/eslint-config",
+  "type": "module",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "npx @eslint/config-inspector@latest --config eslint.config.ts",
+    "stub": "tsdown",
+    "watch": "tsdown --watch",
+    "build": "pnpm run typegen && tsdown --clean --dts",
+    "build:inspector": "pnpm build && npx @eslint/config-inspector build",
+    "typegen": "node scripts/typegen.ts",
+    "typecheck": "tsgo --noEmit",
+    "lint": "eslint",
+    "lint:fix": "eslint . --fix",
+    "prepack": "pnpm build",
+    "release": "bumpp",
+    "prepare": "simple-git-hooks",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "eslint": "catalog:peer"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:dev",
+    "@typescript/native-preview": "catalog:dev",
+    "bumpp": "catalog:dev",
+    "eslint-typegen": "catalog:dev",
+    "jiti": "catalog:dev",
+    "lint-staged": "catalog:dev",
+    "simple-git-hooks": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "typescript": "catalog:dev"
+  },
+  "dependencies": {
+    "@eslint-community/eslint-plugin-eslint-comments": "catalog:prod",
+    "eslint-config-flat-gitignore": "catalog:prod",
+    "eslint-flat-config-utils": "catalog:prod",
+    "eslint-plugin-antfu": "catalog:prod",
+    "eslint-plugin-command": "catalog:prod",
+    "eslint-plugin-de-morgan": "catalog:prod",
+    "eslint-plugin-jsdoc": "catalog:prod",
+    "eslint-plugin-jsonc": "catalog:prod",
+    "eslint-plugin-perfectionist": "catalog:prod",
+    "eslint-plugin-pnpm": "catalog:prod",
+    "eslint-plugin-unicorn": "catalog:prod",
+    "eslint-plugin-unused-imports": "catalog:prod",
+    "eslint-plugin-vue": "catalog:prod",
+    "eslint-plugin-yml": "catalog:prod",
+    "typescript-eslint": "catalog:prod",
+    "vue-eslint-parser": "catalog:prod",
+    "yaml-eslint-parser": "catalog:prod"
+  }
+}
