@@ -1,10 +1,12 @@
-import type { RuleOptions } from "./typegen";
 import type { Linter } from "eslint";
+import type { RuleOptions } from "./typegen";
 
 /**
  * Relax plugins type limitation, as most of the plugins did not have correct type info yet.
  */
-export type Config = Omit<Linter.Config<Linter.RulesRecord & RuleOptions>, 'plugins'> & {
+export type Rules = Linter.RulesRecord & RuleOptions
+
+export type Config = Omit<Linter.Config<Rules>, 'plugins'> & {
   /**
    * An object containing a name-value mapping of plugin names to plugin objects.
    * When `files` is specified, these plugins are only available to the matching files.
