@@ -2,11 +2,26 @@
   "name": "@tanny/eslint-config",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@10.27.0",
+  "description": "Tanny's ESLint config",
+  "author": "Tanny",
+  "license": "MIT",
+  "homepage": "https://github.com/Tanny614/eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanny614/eslint-config.git"
+  },
+  "keywords": [
+    "eslint-config"
+  ],
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.mts",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist"
   ],
