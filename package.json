@@ -1,7 +1,7 @@
 {
   "name": "@tanny614/eslint-config",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packageManager": "pnpm@10.27.0",
   "description": "Tanny's ESLint config",
   "author": "Tanny",
