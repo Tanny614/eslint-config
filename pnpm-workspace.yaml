@@ -47,3 +47,6 @@ catalogs:
     typescript-eslint: ^8.57.1
     vue-eslint-parser: ^10.4.0
     yaml-eslint-parser: ^2.0.0
+allowBuilds:
+  esbuild: true
+  simple-git-hooks: true
