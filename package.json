@@ -2,7 +2,6 @@
   "name": "@tanny614/eslint-config",
   "type": "module",
   "version": "1.0.1",
-  "packageManager": "pnpm@10.27.0",
   "description": "Tanny's ESLint config",
   "author": "Tanny",
   "license": "MIT",
@@ -25,6 +24,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "pnpm": ">=11"
+  },
   "scripts": {
     "dev": "npx @eslint/config-inspector@latest --config eslint.config.ts",
     "stub": "tsdown",
