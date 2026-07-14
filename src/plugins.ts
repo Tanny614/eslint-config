@@ -1,5 +1,6 @@
 export { default as pluginEslintComments } from '@eslint-community/eslint-plugin-eslint-comments'
 export { default as pluginMarkdown } from '@eslint/markdown'
+export { default as pluginStylistic } from '@stylistic/eslint-plugin'
 export { default as pluginIgnore } from 'eslint-config-flat-gitignore'
 export { default as pluginAntfu } from 'eslint-plugin-antfu'
 export { default as pluginCommand } from 'eslint-plugin-command'

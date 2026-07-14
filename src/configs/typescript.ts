@@ -9,7 +9,7 @@ const typescriptRecommended: Config[] = tseslint.configs.recommended
   .map(config => ({
     ...config,
     files: [GLOB_TS, GLOB_TSX],
-    name: `tanny/typescript/${config.name?.replace('typescript-eslint/', '') ?? 'recommended'}`,
+    name: `tanny/typescript/${config.name?.replace('typescript-eslint/', '') ?? 'recommended'}`
   }))
 
 export const typescriptCore: Config[] = defineConfig(
@@ -17,20 +17,20 @@ export const typescriptCore: Config[] = defineConfig(
     name: 'tanny/typescript/setup',
     plugins: {
       '@typescript-eslint': tseslint.plugin as ESLint.Plugin,
-      antfu: pluginAntfu,
-      import: pluginImportLite,
-      'unused-imports': pluginUnusedImports,
-    },
+      'antfu': pluginAntfu,
+      'import': pluginImportLite,
+      'unused-imports': pluginUnusedImports
+    }
   },
   {
     files: [GLOB_TS, GLOB_TSX],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        sourceType: 'module',
-      },
+        sourceType: 'module'
+      }
     },
-    name: 'tanny/typescript/parser',
+    name: 'tanny/typescript/parser'
   },
   ...typescriptRecommended,
   {
@@ -40,18 +40,18 @@ export const typescriptCore: Config[] = defineConfig(
       '@typescript-eslint/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
       '@typescript-eslint/consistent-type-assertions': ['error', {
         assertionStyle: 'as',
-        objectLiteralTypeAssertions: 'allow-as-parameter',
+        objectLiteralTypeAssertions: 'allow-as-parameter'
       }],
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@typescript-eslint/consistent-type-imports': ['error', {
         disallowTypeAnnotations: false,
-        fixStyle: 'separate-type-imports',
-        prefer: 'type-imports',
+        fixStyle: 'inline-type-imports',
+        prefer: 'type-imports'
       }],
       '@typescript-eslint/explicit-function-return-type': ['error', {
         allowExpressions: true,
         allowHigherOrderFunctions: true,
-        allowIIFEs: true,
+        allowIIFEs: true
       }],
       '@typescript-eslint/method-signature-style': ['error', 'property'],
       '@typescript-eslint/no-dynamic-delete': 'off',
@@ -66,7 +66,7 @@ export const typescriptCore: Config[] = defineConfig(
       '@typescript-eslint/no-unused-expressions': ['error', {
         allowShortCircuit: true,
         allowTaggedTemplates: true,
-        allowTernary: true,
+        allowTernary: true
       }],
       '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
@@ -75,9 +75,9 @@ export const typescriptCore: Config[] = defineConfig(
       '@typescript-eslint/prefer-as-const': 'warn',
       '@typescript-eslint/prefer-literal-enum-member': ['error', { allowBitwiseExpressions: true }],
       '@typescript-eslint/triple-slash-reference': 'off',
-      '@typescript-eslint/unified-signatures': 'off',
-    } satisfies Rules,
-  },
+      '@typescript-eslint/unified-signatures': 'off'
+    } satisfies Rules
+  }
 )
 
 export const typescript = (): Config[] => [
@@ -88,14 +88,14 @@ export const typescript = (): Config[] => [
     rules: {
       'import/no-duplicates': 'off',
       'no-restricted-syntax': 'off',
-      'unused-imports/no-unused-vars': 'off',
-    } satisfies Rules,
+      'unused-imports/no-unused-vars': 'off'
+    } satisfies Rules
   },
   {
     files: [GLOB_JS, '**/*.cjs'],
     name: 'tanny/typescript/cjs-rules',
     rules: {
-      '@typescript-eslint/no-require-imports': 'off',
-    } satisfies Rules,
-  },
+      '@typescript-eslint/no-require-imports': 'off'
+    } satisfies Rules
+  }
 ]

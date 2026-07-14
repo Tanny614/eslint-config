@@ -1,6 +1,6 @@
-import type { Config } from "../types";
-import { GLOB_EXCLUDE } from "../globs";
-import { pluginIgnore } from "../plugins";
+import type { Config } from '../types'
+import { GLOB_EXCLUDE } from '../globs'
+import { pluginIgnore } from '../plugins'
 
 export const ignores = (): Config[] => [
   {

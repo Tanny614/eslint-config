@@ -11,27 +11,27 @@ export const javascript = (): Config[] => [
         ...globals.node,
         document: 'readonly',
         navigator: 'readonly',
-        window: 'readonly',
+        window: 'readonly'
       },
       parserOptions: {
         ecmaFeatures: {
-          jsx: true,
+          jsx: true
         },
         ecmaVersion: 'latest',
-        sourceType: 'module',
+        sourceType: 'module'
       },
-      sourceType: 'module',
+      sourceType: 'module'
     },
     linterOptions: {
-      reportUnusedDisableDirectives: true,
+      reportUnusedDisableDirectives: true
     },
-    name: 'tanny/javascript/setup',
+    name: 'tanny/javascript/setup'
   },
   {
     name: 'tanny/javascript/rules',
     plugins: {
-      antfu: pluginAntfu,
-      'unused-imports': pluginUnusedImports,
+      'antfu': pluginAntfu,
+      'unused-imports': pluginUnusedImports
     },
     rules: {
       'accessor-pairs': ['error', { enforceForClassMembers: true, setWithoutGet: true }],
@@ -95,7 +95,7 @@ export const javascript = (): Config[] => [
       'no-restricted-globals': [
         'error',
         { message: 'Use `globalThis` instead.', name: 'global' },
-        { message: 'Use `globalThis` instead.', name: 'self' },
+        { message: 'Use `globalThis` instead.', name: 'self' }
       ],
       'no-restricted-properties': [
         'error',
@@ -103,12 +103,12 @@ export const javascript = (): Config[] => [
         { message: 'Use `Object.defineProperty` instead.', property: '__defineGetter__' },
         { message: 'Use `Object.defineProperty` instead.', property: '__defineSetter__' },
         { message: 'Use `Object.getOwnPropertyDescriptor` instead.', property: '__lookupGetter__' },
-        { message: 'Use `Object.getOwnPropertyDescriptor` instead.', property: '__lookupSetter__' },
+        { message: 'Use `Object.getOwnPropertyDescriptor` instead.', property: '__lookupSetter__' }
       ],
       'no-restricted-syntax': [
         'error',
         'TSEnumDeclaration[const=true]',
-        'TSExportAssignment',
+        'TSExportAssignment'
       ],
       'no-self-assign': ['error', { props: true }],
       'no-self-compare': 'error',
@@ -130,7 +130,7 @@ export const javascript = (): Config[] => [
       'no-unused-expressions': ['error', {
         allowShortCircuit: true,
         allowTaggedTemplates: true,
-        allowTernary: true,
+        allowTernary: true
       }],
       'no-unused-vars': 'off',
       'no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
@@ -145,16 +145,16 @@ export const javascript = (): Config[] => [
       'no-with': 'error',
       'object-shorthand': ['error', 'always', {
         avoidQuotes: true,
-        ignoreConstructors: false,
+        ignoreConstructors: false
       }],
       'one-var': ['error', { initialized: 'never' }],
       'prefer-arrow-callback': ['error', {
         allowNamedFunctions: false,
-        allowUnboundThis: true,
+        allowUnboundThis: true
       }],
       'prefer-const': ['error', {
         destructuring: 'all',
-        ignoreReadBeforeAssign: true,
+        ignoreReadBeforeAssign: true
       }],
       'prefer-exponentiation-operator': 'error',
       'prefer-promise-reject-errors': 'error',
@@ -170,12 +170,12 @@ export const javascript = (): Config[] => [
         argsIgnorePattern: '^_',
         ignoreRestSiblings: true,
         vars: 'all',
-        varsIgnorePattern: '^_',
+        varsIgnorePattern: '^_'
       }],
       'use-isnan': ['error', { enforceForIndexOf: true, enforceForSwitchCase: true }],
       'valid-typeof': ['error', { requireStringLiterals: true }],
       'vars-on-top': 'error',
-      'yoda': ['error', 'never'],
-    } satisfies Rules,
-  },
+      'yoda': ['error', 'never']
+    } satisfies Rules
+  }
 ]

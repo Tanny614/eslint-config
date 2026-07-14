@@ -6,8 +6,8 @@ export const node = (): Config[] => [
   {
     name: 'tanny/node/setup',
     plugins: {
-      node: pluginNode,
-    },
+      node: pluginNode
+    }
   },
   {
     files: [GLOB_SRC],
@@ -20,7 +20,7 @@ export const node = (): Config[] => [
       'node/no-path-concat': 'error',
       'node/prefer-global/buffer': ['error', 'never'],
       'node/prefer-global/process': ['error', 'never'],
-      'node/process-exit-as-throw': 'error',
-    } satisfies Rules,
-  },
+      'node/process-exit-as-throw': 'error'
+    } satisfies Rules
+  }
 ]

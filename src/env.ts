@@ -9,8 +9,7 @@ function isPackageExists(name: string): boolean {
   try {
     require.resolve(name, { paths: [cwd] })
     return true
-  }
-  catch {
+  } catch {
     return false
   }
 }
@@ -18,8 +17,7 @@ function isPackageExists(name: string): boolean {
 function readPackageJson(): Record<string, unknown> | undefined {
   try {
     return JSON.parse(readFileSync('package.json', 'utf8')) as Record<string, unknown>
-  }
-  catch {
+  } catch {
     return undefined
   }
 }

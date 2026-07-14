@@ -9,14 +9,14 @@ const vueTs: Config[] = typescriptCore
   .map(config => ({
     ...config,
     files: [GLOB_VUE],
-    name: `tanny/vue/${config.name?.replace('tanny/typescript/', '') ?? 'anonymous'}`,
+    name: `tanny/vue/${config.name?.replace('tanny/typescript/', '') ?? 'anonymous'}`
   }))
 
 const recommendedRules = [
   pluginVue.configs.base.rules,
   ...pluginVue.configs['flat/essential'].map(config => config.rules),
   ...pluginVue.configs['flat/strongly-recommended'].map(config => config.rules),
-  ...pluginVue.configs['flat/recommended'].map(config => config.rules),
+  ...pluginVue.configs['flat/recommended'].map(config => config.rules)
 ].reduce((acc, rules) => ({ ...acc, ...rules }), {})
 
 export const vue = (): Config[] => [
@@ -27,19 +27,19 @@ export const vue = (): Config[] => [
       parser: parserVue,
       parserOptions: {
         ecmaFeatures: {
-          jsx: true,
+          jsx: true
         },
         extraFileExtensions: ['.vue'],
         parser: tseslint.parser,
-        sourceType: 'module',
-      },
+        sourceType: 'module'
+      }
     },
     name: 'tanny/vue',
     plugins: {
       '@typescript-eslint': tseslint.plugin as ESLint.Plugin,
-      vue: pluginVue,
-      antfu: pluginAntfu,
-      node: pluginNode,
+      'vue': pluginVue,
+      'antfu': pluginAntfu,
+      'node': pluginNode
     },
     processor: pluginVue.processors['.vue'],
     rules: {
@@ -48,13 +48,13 @@ export const vue = (): Config[] => [
       'no-useless-assignment': 'off',
       '@typescript-eslint/explicit-function-return-type': 'off',
       'vue/block-order': ['error', {
-        order: ['script', 'template', 'style'],
+        order: ['script', 'template', 'style']
       }],
       'vue/component-name-in-template-casing': ['error', 'PascalCase'],
       'vue/component-options-name-casing': ['error', 'PascalCase'],
       'vue/custom-event-name-casing': ['error', 'camelCase'],
       'vue/define-macros-order': ['error', {
-        order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots'],
+        order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots']
       }],
       'vue/eqeqeq': ['error', 'smart'],
       'vue/max-attributes-per-line': 'off',
@@ -68,13 +68,13 @@ export const vue = (): Config[] => [
       'vue/no-v-html': 'off',
       'vue/object-shorthand': ['error', 'always', {
         avoidQuotes: true,
-        ignoreConstructors: false,
+        ignoreConstructors: false
       }],
       'vue/padding-line-between-blocks': ['error', 'always'],
       'vue/prefer-template': 'error',
       'vue/prop-name-casing': ['error', 'camelCase'],
       'vue/require-default-prop': 'off',
-      'vue/require-prop-types': 'off',
-    } satisfies Rules,
-  },
+      'vue/require-prop-types': 'off'
+    } satisfies Rules
+  }
 ]

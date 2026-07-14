@@ -1,8 +1,7 @@
 import type { Linter } from 'eslint'
-import type { Arrayable } from 'eslint-flat-config-utils'
 import type { ConfigNames } from './typegen'
 import type { Config } from './types'
-import { FlatConfigComposer } from 'eslint-flat-config-utils'
+import { type Arrayable, FlatConfigComposer } from 'eslint-flat-config-utils'
 import {
   command,
   comments,
@@ -17,10 +16,11 @@ import {
   perfectionist,
   pnpm,
   sort,
+  stylistic,
   typescript,
   unicorn,
   vue,
-  yml,
+  yml
 } from './configs/index.ts'
 import { hasPnpm, hasVue } from './env'
 
@@ -42,24 +42,25 @@ export const presetJavaScript = (): Config[] => [
   ...imports(),
   ...jsdoc(),
   ...unicorn(),
-  ...deMorgan(),
+  ...deMorgan()
 ]
 
 export const presetJsonc = (): Config[] => [
   ...jsonc(),
-  ...sort(),
+  ...sort()
 ]
 
 export const presetLangExtensions = (): Config[] => [
   ...markdown(),
   ...yml(),
-  ...presetJsonc(),
+  ...presetJsonc()
 ]
 
 export const presetBasic = (): Config[] => [
   ...presetJavaScript(),
   ...typescript(),
-  ...perfectionist(),
+  ...stylistic(),
+  ...perfectionist()
 ]
 
 export const presetAll = (): Config[] => [
@@ -67,7 +68,7 @@ export const presetAll = (): Config[] => [
   ...vue(),
   ...command(),
   ...presetLangExtensions(),
-  ...pnpm(),
+  ...pnpm()
 ]
 
 export function createConfig(options: Options = {}): Config[] {
@@ -76,7 +77,7 @@ export function createConfig(options: Options = {}): Config[] {
     command: enableCommand = true,
     langExtensions: enableLangExtensions = true,
     pnpm: enablePnpm = hasPnpm(),
-    vue: enableVue = hasVue(),
+    vue: enableVue = hasVue()
   } = options
 
   const configs: Config[] = []
@@ -101,7 +102,7 @@ export function tanny(
 ): FlatConfigComposer<Config, ConfigNames> {
   return new FlatConfigComposer<Config, ConfigNames>(
     createConfig(options),
-    ...(userConfigs as any),
+    ...(userConfigs as any)
   )
 }
 
@@ -114,7 +115,7 @@ export function defineConfig(
 
 export function createDefaultConfig(): Config[] {
   return [
-    ...createConfig(),
+    ...createConfig()
   ]
 }
 

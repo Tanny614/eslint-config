@@ -4,6 +4,6 @@ import createCommand from 'eslint-plugin-command/config'
 export const command = (): Config[] => [
   {
     ...createCommand(),
-    name: 'tanny/command',
-  },
+    name: 'tanny/command'
+  }
 ]

@@ -5,13 +5,13 @@ export const comments = (): Config[] => [
   {
     name: 'tanny/eslint-comments/rules',
     plugins: {
-      'eslint-comments': pluginEslintComments,
+      'eslint-comments': pluginEslintComments
     },
     rules: {
       'eslint-comments/no-aggregating-enable': 'error',
       'eslint-comments/no-duplicate-disable': 'error',
       'eslint-comments/no-unlimited-disable': 'error',
-      'eslint-comments/no-unused-enable': 'error',
-    } satisfies Rules,
-  },
+      'eslint-comments/no-unused-enable': 'error'
+    } satisfies Rules
+  }
 ]

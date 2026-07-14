@@ -46,6 +46,7 @@
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "catalog:prod",
     "@eslint/markdown": "catalog:prod",
+    "@stylistic/eslint-plugin": "catalog:prod",
     "eslint-config-flat-gitignore": "catalog:prod",
     "eslint-flat-config-utils": "catalog:prod",
     "eslint-merge-processors": "catalog:prod",

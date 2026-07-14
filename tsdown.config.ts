@@ -4,5 +4,5 @@ export default defineConfig({
   entry: ['src/index.ts'],
   dts: false,
   clean: true,
-  format: ['esm'],
+  format: ['esm']
 })

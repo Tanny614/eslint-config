@@ -6,8 +6,8 @@ export const jsdoc = (): Config[] => [
   {
     name: 'tanny/jsdoc/setup',
     plugins: {
-      jsdoc: pluginJsdoc,
-    },
+      jsdoc: pluginJsdoc
+    }
   },
   {
     files: [GLOB_SRC],
@@ -29,7 +29,7 @@ export const jsdoc = (): Config[] => [
       'jsdoc/require-property-name': 'warn',
       'jsdoc/require-returns-check': 'warn',
       'jsdoc/require-returns-description': 'warn',
-      'jsdoc/require-yields-check': 'warn',
-    } satisfies Rules,
-  },
+      'jsdoc/require-yields-check': 'warn'
+    } satisfies Rules
+  }
 ]

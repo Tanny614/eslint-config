@@ -5,7 +5,7 @@ export const perfectionist = (): Config[] => [
   {
     name: 'tanny/perfectionist/setup',
     plugins: {
-      perfectionist: pluginPerfectionist,
+      perfectionist: pluginPerfectionist
     },
     rules: {
       'perfectionist/sort-exports': ['error', { order: 'asc', type: 'natural' }],
@@ -19,15 +19,15 @@ export const perfectionist = (): Config[] => [
           ['value-parent', 'value-sibling', 'value-index'],
           'side-effect',
           'ts-equals-import',
-          'unknown',
+          'unknown'
         ],
         newlinesBetween: 'ignore',
         newlinesInside: 'ignore',
         order: 'asc',
-        type: 'natural',
+        type: 'natural'
       }],
       'perfectionist/sort-named-exports': ['error', { order: 'asc', type: 'natural' }],
-      'perfectionist/sort-named-imports': ['error', { order: 'asc', type: 'natural' }],
-    } satisfies Rules,
-  },
+      'perfectionist/sort-named-imports': ['error', { order: 'asc', type: 'natural' }]
+    } satisfies Rules
+  }
 ]

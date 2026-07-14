@@ -6,8 +6,8 @@ export const yml = (): Config[] => [
   {
     name: 'tanny/yml/setup',
     plugins: {
-      yml: pluginYml,
-    },
+      yml: pluginYml
+    }
   },
   {
     files: [GLOB_YAML],
@@ -31,7 +31,7 @@ export const yml = (): Config[] => [
       'yml/key-spacing': 'error',
       'yml/no-tab-indent': 'error',
       'yml/quotes': ['error', { avoidEscape: true, prefer: 'single' }],
-      'yml/spaced-comment': 'error',
-    } satisfies Rules,
-  },
+      'yml/spaced-comment': 'error'
+    } satisfies Rules
+  }
 ]

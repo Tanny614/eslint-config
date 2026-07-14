@@ -6,8 +6,8 @@ export const jsonc = (): Config[] => [
   {
     name: 'tanny/jsonc/setup',
     plugins: {
-      jsonc: pluginJson,
-    },
+      jsonc: pluginJson
+    }
   },
   {
     files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
@@ -49,7 +49,7 @@ export const jsonc = (): Config[] => [
       'jsonc/object-curly-spacing': ['error', 'always'],
       'jsonc/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
       'jsonc/quote-props': 'error',
-      'jsonc/quotes': 'error',
-    } satisfies Rules,
-  },
+      'jsonc/quotes': 'error'
+    } satisfies Rules
+  }
 ]

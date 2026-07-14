@@ -7,15 +7,15 @@ export const sortPackageJson = (): Config[] => [
     language: 'jsonc/x',
     name: 'tanny/sort/package-json',
     plugins: {
-      jsonc: pluginJson,
+      jsonc: pluginJson
     },
     rules: {
       'jsonc/sort-array-values': [
         'error',
         {
           order: { type: 'asc' },
-          pathPattern: '^files$',
-        },
+          pathPattern: '^files$'
+        }
       ],
       'jsonc/sort-keys': [
         'error',
@@ -65,29 +65,29 @@ export const sortPackageJson = (): Config[] => [
             'husky',
             'simple-git-hooks',
             'lint-staged',
-            'eslintConfig',
+            'eslintConfig'
           ],
-          pathPattern: '^$',
+          pathPattern: '^$'
         },
         {
           order: { type: 'asc' },
-          pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies(Meta)?$',
+          pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies(Meta)?$'
         },
         {
           order: { type: 'asc' },
-          pathPattern: '^(?:resolutions|overrides|pnpm.overrides)$',
+          pathPattern: '^(?:resolutions|overrides|pnpm.overrides)$'
         },
         {
           order: { type: 'asc' },
-          pathPattern: '^workspaces\\.catalog$',
+          pathPattern: '^workspaces\\.catalog$'
         },
         {
           order: { type: 'asc' },
-          pathPattern: '^workspaces\\.catalogs\\.[^.]+$',
+          pathPattern: '^workspaces\\.catalogs\\.[^.]+$'
         },
         {
           order: ['types', 'import', 'require', 'default'],
-          pathPattern: '^exports.*$',
+          pathPattern: '^exports.*$'
         },
         {
           order: [
@@ -100,13 +100,13 @@ export const sortPackageJson = (): Config[] => [
             'post-checkout',
             'post-merge',
             'pre-push',
-            'pre-auto-gc',
+            'pre-auto-gc'
           ],
-          pathPattern: '^(?:gitHooks|husky|simple-git-hooks)$',
-        },
-      ],
-    } satisfies Rules,
-  },
+          pathPattern: '^(?:gitHooks|husky|simple-git-hooks)$'
+        }
+      ]
+    } satisfies Rules
+  }
 ]
 
 export const sortTsconfig = (): Config[] => [
@@ -115,7 +115,7 @@ export const sortTsconfig = (): Config[] => [
     language: 'jsonc/x',
     name: 'tanny/sort/tsconfig-json',
     plugins: {
-      jsonc: pluginJson,
+      jsonc: pluginJson
     },
     rules: {
       'jsonc/sort-keys': [
@@ -127,9 +127,9 @@ export const sortTsconfig = (): Config[] => [
             'references',
             'files',
             'include',
-            'exclude',
+            'exclude'
           ],
-          pathPattern: '^$',
+          pathPattern: '^$'
         },
         {
           order: [
@@ -223,13 +223,13 @@ export const sortTsconfig = (): Config[] => [
             'verbatimModuleSyntax',
             'erasableSyntaxOnly',
             'skipDefaultLibCheck',
-            'skipLibCheck',
+            'skipLibCheck'
           ],
-          pathPattern: '^compilerOptions$',
-        },
-      ],
-    } satisfies Rules,
-  },
+          pathPattern: '^compilerOptions$'
+        }
+      ]
+    } satisfies Rules
+  }
 ]
 
 export const sortPnpmWorkspace = (): Config[] => [
@@ -238,7 +238,7 @@ export const sortPnpmWorkspace = (): Config[] => [
     language: 'yml/yaml',
     name: 'tanny/sort/pnpm-workspace',
     plugins: {
-      yml: pluginYml,
+      yml: pluginYml
     },
     rules: {
       'yml/sort-keys': [
@@ -300,21 +300,21 @@ export const sortPnpmWorkspace = (): Config[] => [
             'onlyBuiltDependencies',
             'onlyBuiltDependenciesFile',
             'packageExtensions',
-            'peerDependencyRules',
+            'peerDependencyRules'
           ],
-          pathPattern: '^$',
+          pathPattern: '^$'
         },
         {
           order: { type: 'asc' },
-          pathPattern: '.*',
-        },
-      ],
-    } satisfies Rules,
-  },
+          pathPattern: '.*'
+        }
+      ]
+    } satisfies Rules
+  }
 ]
 
 export const sort = (): Config[] => [
   ...sortPackageJson(),
   ...sortTsconfig(),
-  ...sortPnpmWorkspace(),
+  ...sortPnpmWorkspace()
 ]

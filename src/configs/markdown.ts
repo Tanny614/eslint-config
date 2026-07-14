@@ -8,12 +8,12 @@ export const markdown = (): Config[] => [
     name: 'tanny/markdown/setup',
     plugins: {
       '@typescript-eslint': tseslint.plugin,
-      antfu: pluginAntfu,
-      command: pluginCommand,
-      markdown: pluginMarkdown,
-      perfectionist: pluginPerfectionist,
-      'unused-imports': pluginUnusedImports,
-    },
+      'antfu': pluginAntfu,
+      'command': pluginCommand,
+      'markdown': pluginMarkdown,
+      'perfectionist': pluginPerfectionist,
+      'unused-imports': pluginUnusedImports
+    }
   },
   {
     files: [GLOB_MARKDOWN],
@@ -21,13 +21,13 @@ export const markdown = (): Config[] => [
     name: 'tanny/markdown/processor',
     processor: mergeProcessors([
       pluginMarkdown.processors.markdown,
-      processorPassThrough,
-    ]),
+      processorPassThrough
+    ])
   },
   {
     files: [GLOB_MARKDOWN],
     language: 'markdown/gfm',
-    name: 'tanny/markdown/parser',
+    name: 'tanny/markdown/parser'
   },
   {
     files: [GLOB_MARKDOWN],
@@ -35,8 +35,8 @@ export const markdown = (): Config[] => [
     rules: {
       ...(pluginMarkdown.configs.recommended.at(0)?.rules ?? {}),
       'markdown/fenced-code-language': 'off',
-      'markdown/no-missing-label-refs': 'off',
-    } satisfies Rules,
+      'markdown/no-missing-label-refs': 'off'
+    } satisfies Rules
   },
   {
     files: [GLOB_MARKDOWN],
@@ -45,17 +45,17 @@ export const markdown = (): Config[] => [
       'command/command': 'off',
       'no-irregular-whitespace': 'off',
       'perfectionist/sort-exports': 'off',
-      'perfectionist/sort-imports': 'off',
-    } satisfies Rules,
+      'perfectionist/sort-imports': 'off'
+    } satisfies Rules
   },
   {
     files: [GLOB_MARKDOWN_CODE, `${GLOB_MARKDOWN}/${GLOB_VUE}`],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
-          impliedStrict: true,
-        },
-      },
+          impliedStrict: true
+        }
+      }
     },
     name: 'tanny/markdown/disables/code',
     rules: {
@@ -76,7 +76,7 @@ export const markdown = (): Config[] => [
       '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/no-use-before-define': 'off',
       'unused-imports/no-unused-imports': 'off',
-      'unused-imports/no-unused-vars': 'off',
-    } satisfies Rules,
-  },
+      'unused-imports/no-unused-vars': 'off'
+    } satisfies Rules
+  }
 ]

@@ -38,7 +38,7 @@ import { defineConfig } from '@tanny/eslint-config'
 export default defineConfig({
   command: false,
   pnpm: true,
-  vue: true,
+  vue: true
 })
 ```
 
@@ -49,13 +49,13 @@ import { defineConfig } from '@tanny/eslint-config'
 
 export default defineConfig(
   {
-    pnpm: true,
+    pnpm: true
   },
   {
     rules: {
-      'no-console': 'off',
-    },
-  },
+      'no-console': 'off'
+    }
+  }
 )
 ```
 

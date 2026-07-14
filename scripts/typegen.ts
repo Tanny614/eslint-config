@@ -7,26 +7,26 @@ import { presetAll } from '../src/presets.ts'
 
 const builtinRulesConfig = {
   plugins: {
-    '': { rules: Object.fromEntries(builtinRules.entries()) },
-  },
+    '': { rules: Object.fromEntries(builtinRules.entries()) }
+  }
 }
 
 async function main(): Promise<void> {
   const presetConfigs = presetAll()
   const configs: Config[] = [
     ...presetConfigs,
-    builtinRulesConfig,
+    builtinRulesConfig
   ]
 
   let dts = await flatConfigsToRulesDTS(configs, {
     exportTypeName: 'RuleOptions',
-    includeAugmentation: false,
+    includeAugmentation: false
   })
 
   const configNames = [...new Set(
     presetConfigs
       .map(config => config.name)
-      .filter((name): name is string => Boolean(name)),
+      .filter((name): name is string => Boolean(name))
   )]
 
   dts += `
@@ -37,7 +37,7 @@ export type ConfigNames = ${configNames.length ? configNames.map(i => `'${i}'`).
   await writeFile('src/typegen.d.ts', dts)
 }
 
-main().catch((error) => {
+main().catch(error => {
   console.error(error)
   process.exitCode = 1
 })

@@ -1,5 +1,5 @@
-import type { Linter } from "eslint";
-import type { RuleOptions } from "./typegen";
+import type { Linter } from 'eslint'
+import type { RuleOptions } from './typegen'
 
 /**
  * Relax plugins type limitation, as most of the plugins did not have correct type info yet.

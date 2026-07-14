@@ -5,7 +5,7 @@ export const unicorn = (): Config[] => [
   {
     name: 'tanny/unicorn/rules',
     plugins: {
-      unicorn: pluginUnicorn,
+      unicorn: pluginUnicorn
     },
     rules: {
       'unicorn/consistent-empty-array-spread': 'error',
@@ -22,7 +22,7 @@ export const unicorn = (): Config[] => [
       'unicorn/prefer-number-properties': 'error',
       'unicorn/prefer-string-starts-ends-with': 'error',
       'unicorn/prefer-type-error': 'error',
-      'unicorn/throw-new-error': 'error',
-    } satisfies Rules,
-  },
+      'unicorn/throw-new-error': 'error'
+    } satisfies Rules
+  }
 ]
